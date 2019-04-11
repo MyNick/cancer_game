@@ -8,9 +8,17 @@ public class ImmuneSystemBehavior : MonoBehaviour {
     public Transform target;
     public float MAX_DISTANCE = 3;
 
+
+    private float minChangeDirectionTime = 0.5f;
+    private float maxChangeDirectionTime = 2;
+    private float changeDirectionTimer;
+    private Vector2 randomDir;
+
     void Start()
     {
-        
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        SetTimer();
+        RandomRotate();
     }
 
     /***
@@ -23,8 +31,30 @@ public class ImmuneSystemBehavior : MonoBehaviour {
         if (Vector3.Distance(transform.position, target.position) < MAX_DISTANCE) {
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
         } else {
-            Vector3 movment_dir = Quaternion.Euler(0, 0, Random.Range(0, 360)) * new Vector3(1, 0, 0);
-            transform.position += speed * Time.fixedDeltaTime * movment_dir;
+            Movement();
+        }
+    }
+
+    private void SetTimer()
+    {
+        changeDirectionTimer = Random.Range(minChangeDirectionTime, maxChangeDirectionTime);
+    }
+
+    private void RandomRotate()
+    {
+        transform.Rotate(0, 0, Random.Range(0, 360.0f));
+    }
+
+    private void Movement()
+    {
+        changeDirectionTimer -= Time.fixedDeltaTime;
+        if (changeDirectionTimer <= 0)
+        {
+            SetTimer();
+            RandomRotate();
+            randomDir = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
+            randomDir.Normalize();
+            transform.GetComponent<Rigidbody2D>().velocity = randomDir;
         }
     }
 }

@@ -22,17 +22,9 @@ public class CancerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        changeDirectionTimer -= Time.fixedDeltaTime;
-        if (changeDirectionTimer <= 0)
-        {
-            SetTimer();
-            RandomRotate();
-            randomDir = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
-            randomDir.Normalize();
-            transform.GetComponent<Rigidbody2D>().velocity = randomDir;
-        }
 
-        
+        Movement();
+
     }
 
     private void SetTimer()
@@ -44,4 +36,18 @@ public class CancerMovement : MonoBehaviour
     {
         transform.Rotate(0, 0, Random.Range(0, 360.0f));
     }
+
+    private void Movement()
+    {
+        changeDirectionTimer -= Time.fixedDeltaTime;
+        if (changeDirectionTimer <= 0)
+        {
+            SetTimer();
+            RandomRotate();
+            randomDir = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
+            randomDir.Normalize();
+            transform.GetComponent<Rigidbody2D>().velocity = randomDir;
+        }
+    }
+
 }

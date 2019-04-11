@@ -35,12 +35,12 @@ public class PlayerMovment : MonoBehaviour
         }
 
         if (Input.GetKey(KeyCode.RightArrow)) {
-            transform.Rotate(transform.forward, rotationSpeed);
+            transform.Rotate(transform.forward, -rotationSpeed);
 
         }
 
         if (Input.GetKey(KeyCode.LeftArrow)) {
-            transform.Rotate(transform.forward, -rotationSpeed);
+            transform.Rotate(transform.forward, rotationSpeed);
         }
     }
 
