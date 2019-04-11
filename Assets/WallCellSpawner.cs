@@ -31,6 +31,7 @@ public class WallCellSpawner : MonoBehaviour
 
     private void Spawn() {
         GameObject go = Instantiate(Resources.Load<GameObject>("Cell"), transform.position, transform.rotation);
+        go.tag = "Cancer";
         int random_result = Random.Range(0, 2);
         if (random_result == 0) {
             go.AddComponent<RandomWalker>();
