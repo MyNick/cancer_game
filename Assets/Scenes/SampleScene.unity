@@ -263,6 +263,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1099482617}
+    - target: {fileID: 3236980756366820902, guid: d93aacb2c858c7446a1e13ef4f472774,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d93aacb2c858c7446a1e13ef4f472774, type: 3}
 --- !u!1 &519420028
@@ -375,7 +380,7 @@ GameObject:
   - component: {fileID: 644199628}
   m_Layer: 0
   m_Name: world_edges
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -926,7 +931,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1099482618
 CircleCollider2D:
@@ -1084,7 +1089,7 @@ PrefabInstance:
     - target: {fileID: 7935317910437787316, guid: d93aacb2c858c7446a1e13ef4f472774,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7935317910437787316, guid: d93aacb2c858c7446a1e13ef4f472774,
         type: 3}
@@ -1106,6 +1111,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1099482617}
+    - target: {fileID: 3236980756366820902, guid: d93aacb2c858c7446a1e13ef4f472774,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d93aacb2c858c7446a1e13ef4f472774, type: 3}
 --- !u!1 &8658366294593982265 stripped
