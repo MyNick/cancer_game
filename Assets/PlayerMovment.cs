@@ -44,6 +44,9 @@ public class PlayerMovment : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        GameObject.Find("Main Camera").GetComponent<MainCamera>().Shake(0.5f);
+        if (collision.gameObject.CompareTag("Cancer"))
+        {
+            GameObject.Find("Main Camera").GetComponent<MainCamera>().Shake(0.5f);
+        }
     }
 }
