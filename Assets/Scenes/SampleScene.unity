@@ -933,8 +933,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1099482618
-CircleCollider2D:
+--- !u!70 &1099482618
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -947,8 +947,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.32
+  m_Size: {x: 0.47, y: 1.16}
+  m_Direction: 0
 --- !u!50 &1099482619
 Rigidbody2D:
   serializedVersion: 4
@@ -1152,9 +1152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09577de023f505d4c8e50c76c4198e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  target: {fileID: 0}
-  MAX_DISTANCE: 3
 --- !u!50 &8658366294593982268
 Rigidbody2D:
   serializedVersion: 4
