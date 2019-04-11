@@ -28,7 +28,6 @@ public class CancerMovement : MonoBehaviour
             SetTimer();
             RandomRotate();
             randomDir = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
-            Debug.Log(randomDir);
             randomDir.Normalize();
             transform.GetComponent<Rigidbody2D>().velocity = randomDir;
         }

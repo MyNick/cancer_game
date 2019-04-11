@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerMovment : MonoBehaviour
 {
-    public float movementSpeed = 10;
-
+    public float movementSpeed = 3f;
+    public float rotationSpeed = 4f;
     void Start() {
 
     }
@@ -20,27 +20,28 @@ public class PlayerMovment : MonoBehaviour
     }
 
     void playerMove() {
-        Vector2 speed = new Vector2(0, 0);
-        if (Input.GetKey(KeyCode.UpArrow)) {
-            speed.y += 1;
+
+        Vector2 speed = transform.up * 10f;
+        speed.Normalize();
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.GetComponent<Rigidbody2D>().velocity = speed * movementSpeed;
         }
+        
 
         if (Input.GetKey(KeyCode.DownArrow)) {
-            speed.y += -1;
+            transform.GetComponent<Rigidbody2D>().velocity = -speed * movementSpeed;
 
         }
 
         if (Input.GetKey(KeyCode.RightArrow)) {
-            speed.x += 1;
+            transform.Rotate(transform.forward, rotationSpeed);
 
         }
 
         if (Input.GetKey(KeyCode.LeftArrow)) {
-            speed.x += -1;
+            transform.Rotate(transform.forward, -rotationSpeed);
         }
-        speed.Normalize();
-        speed *= movementSpeed * Time.fixedDeltaTime;
-        transform.position += (Vector3)speed;;
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
