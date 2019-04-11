@@ -29,7 +29,7 @@ public class CancerMovement : MonoBehaviour
             RandomRotate();
         }
 
-        targetPos = Random.insideUnitCircle;
+        //targetPos = ;
 
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.fixedDeltaTime);
     }
