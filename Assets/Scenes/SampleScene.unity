@@ -869,7 +869,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 640f7c1ef1c596a4ea3b515bc0820e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  movementSpeed: 4
+  rotationSpeed: 4
 --- !u!212 &1099482616
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -968,7 +969,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1001 &8402924808331165074
 PrefabInstance:
   m_ObjectHideFlags: 0
