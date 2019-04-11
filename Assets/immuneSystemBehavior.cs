@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerWalker : CellMovment {
+public class ImmuneSystemBehavior : MonoBehaviour {
 
+    public float speed = 2;
     public Transform target;
     public float MAX_DISTANCE = 3;
 
