@@ -11,7 +11,7 @@ public class CancerMovement : MonoBehaviour
     private float changeDirectionTimer;
 
 
-    private Vector2 targetPos;
+    private Vector2 randomDir;
 
     void Start()
     {
@@ -23,15 +23,17 @@ public class CancerMovement : MonoBehaviour
     void FixedUpdate()
     {
         changeDirectionTimer -= Time.fixedDeltaTime;
-        if (changeDirectionTimer <= 0 && Vector2.Distance(transform.position, targetPos) < 0.2f)
+        if (changeDirectionTimer <= 0)
         {
             SetTimer();
             RandomRotate();
+            randomDir = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
+            Debug.Log(randomDir);
+            randomDir.Normalize();
+            transform.GetComponent<Rigidbody2D>().velocity = randomDir;
         }
 
-        //targetPos = ;
-
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.fixedDeltaTime);
+        
     }
 
     private void SetTimer()
