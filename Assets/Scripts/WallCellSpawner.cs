@@ -30,7 +30,7 @@ public class WallCellSpawner : MonoBehaviour
     }
 
     private void Spawn() {
-        GameObject go = Instantiate(Resources.Load<GameObject>("Cell"), transform.position, transform.rotation);
+        GameObject go = Instantiate(Resources.Load<GameObject>("Prefabs/Cell"), transform.position, transform.rotation);
         
     }
 }
