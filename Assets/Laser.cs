@@ -20,8 +20,8 @@ public class Laser : MonoBehaviour
     {
         if(collision.CompareTag("Cancer"))
         {
-            Destroy(collision.gameObject);
-            
+            collision.GetComponent<CancerMovement>().Hit();
+
         }
         if (!collision.CompareTag("Player"))
         {

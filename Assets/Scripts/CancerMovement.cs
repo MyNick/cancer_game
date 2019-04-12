@@ -9,7 +9,9 @@ public class CancerMovement : MonoBehaviour
     private float minChangeDirectionTime = 0.5f;
     private float maxChangeDirectionTime = 2;
     private float changeDirectionTimer;
+    private bool isShrinked = false;
 
+    private float scaleBackTimer;
 
     private Vector2 randomDir;
 
@@ -22,7 +24,23 @@ public class CancerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        scaleBackTimer -= Time.fixedDeltaTime;
+        if(scaleBackTimer <= 0f && isShrinked)
+        {
+            isShrinked = false;
+            transform.localScale = new Vector3(transform.localScale.x * 2.0f, transform.localScale.y * 2.0f, transform.localScale.z * 2.0f);
 
+        }
+
+        if(isShrinked)
+        {
+            GetComponent<CircleCollider2D>().isTrigger = true;
+        }
+        else
+        {
+            GetComponent<CircleCollider2D>().isTrigger = false;
+
+        }
         Movement();
 
     }
@@ -48,6 +66,18 @@ public class CancerMovement : MonoBehaviour
             randomDir.Normalize();
             transform.GetComponent<Rigidbody2D>().velocity = randomDir;
         }
+    }
+
+
+    public void Hit()
+    {
+        if (!isShrinked)
+        {
+            transform.localScale = new Vector3(transform.localScale.x / 2.0f, transform.localScale.y / 2.0f, transform.localScale.z / 2.0f);
+            isShrinked = true;
+            scaleBackTimer = 5f;
+        }
+        
     }
 
 }

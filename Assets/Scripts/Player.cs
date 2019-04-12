@@ -70,6 +70,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Cancer"))
+        {
+            Destroy(collision.gameObject);
+
+        }
+    }
+
     private void ResetTimer()
     {
         shootTimer = 0.25f;
