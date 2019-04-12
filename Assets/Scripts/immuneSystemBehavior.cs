@@ -57,4 +57,12 @@ public class ImmuneSystemBehavior : MonoBehaviour {
             transform.GetComponent<Rigidbody2D>().velocity = randomDir;
         }
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<Player>().Hit();
+        }
+    }
 }
