@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float rotationSpeed = 4f;
 
     public const float MAX_HEALTH = 100;
+    public const float HIT_DAMAGE = 20;
     public float health           = MAX_HEALTH;
 
     private float shootTimer;
@@ -101,8 +102,11 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Player Hit");
             isHitted = true;
-            health -= 25;
+            health -= HIT_DAMAGE;
             hitTimer = 2f;
+            if (health == 0) {
+                Destroy(gameObject);
+            }
         }
     }
 }
