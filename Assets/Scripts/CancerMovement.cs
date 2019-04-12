@@ -31,16 +31,6 @@ public class CancerMovement : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x * 2.0f, transform.localScale.y * 2.0f, transform.localScale.z * 2.0f);
 
         }
-
-        if(isShrinked)
-        {
-            GetComponent<CircleCollider2D>().isTrigger = true;
-        }
-        else
-        {
-            GetComponent<CircleCollider2D>().isTrigger = false;
-
-        }
         Movement();
 
     }
@@ -80,4 +70,7 @@ public class CancerMovement : MonoBehaviour
         
     }
 
+    public bool IsShrinked() {
+        return isShrinked;
+    }
 }
