@@ -28,8 +28,9 @@ public class ImmuneSystemBehavior : MonoBehaviour {
      */
     void FixedUpdate()
     {
-        if (Vector3.Distance(transform.position, target.position) < MAX_DISTANCE) {
-            transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
+        float distance = Vector3.Distance(transform.position, target.position);
+        if (distance < MAX_DISTANCE) {
+            transform.GetComponent<Rigidbody2D>().velocity = speed * (target.position - transform.position).normalized;
         } else {
             Movement();
         }
@@ -54,7 +55,7 @@ public class ImmuneSystemBehavior : MonoBehaviour {
             RandomRotate();
             randomDir = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
             randomDir.Normalize();
-            transform.GetComponent<Rigidbody2D>().velocity = randomDir;
+            transform.GetComponent<Rigidbody2D>().velocity = randomDir * speed;
         }
     }
 
