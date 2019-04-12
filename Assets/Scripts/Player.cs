@@ -2,24 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovment : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public float movementSpeed = 3f;
     public float rotationSpeed = 4f;
-    void Start() {
 
+    private float shootTimer;
+    private bool canShoot = true;
+
+    void Start() {
+        ResetTimer();
     }
 
     void FixedUpdate() {
         playerMove();
-        followMouse();
+
+        shootTimer -= Time.fixedDeltaTime;
+        if (shootTimer <= 0)
+        {
+            
+            canShoot = true;
+        }
     }
 
-    private void followMouse() {
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && canShoot)
+        {
+            Object laser = Instantiate(Resources.Load<GameObject>("Prefabs/Laser"), transform.position, transform.rotation);
+            ResetTimer();
+            canShoot = false;
+        }
     }
 
     void playerMove() {
+
 
         Vector2 speed = transform.up * 10f;
         speed.Normalize();
@@ -42,6 +59,8 @@ public class PlayerMovment : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow)) {
             transform.Rotate(transform.forward, rotationSpeed);
         }
+
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -49,5 +68,10 @@ public class PlayerMovment : MonoBehaviour
         {
             GameObject.Find("Main Camera").GetComponent<MainCamera>().Shake(0.5f);
         }
+    }
+
+    private void ResetTimer()
+    {
+        shootTimer = 0.25f;
     }
 }
