@@ -82,9 +82,10 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Cancer"))
         {
-            GameObject.Find("Main Camera").GetComponent<MainCamera>().Shake(0.5f);
             if (collision.gameObject.GetComponent<CancerMovement>().IsShrinked()) {
                 Destroy(collision.gameObject);
+            } else {
+                GameObject.Find("Main Camera").GetComponent<MainCamera>().Shake(0.5f);
             }
         }
     }
