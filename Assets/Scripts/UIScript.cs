@@ -19,11 +19,11 @@ public class UIScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        health_foreground.fillAmount = player.GetComponent<Player>().health / Player.MAX_HEALTH;
-
-        float cancer = GameObject.FindGameObjectsWithTag("Cancer").Length;
-        cancer += GameObject.FindGameObjectsWithTag("WallCancer").Length;
-        cancer /= MAX_CANCER;
-        cells_foreground.fillAmount = cancer;
+        if (GameObject.FindObjectsOfType<Player>().Length == 0) {
+            health_foreground.fillAmount = 0;
+        } else {
+            health_foreground.fillAmount = player.GetComponent<Player>().health / Player.MAX_HEALTH;
+        }
+        cells_foreground.fillAmount = GameObject.FindObjectOfType<GameManager>().AmountOfCancer / MAX_CANCER;
     }
 }

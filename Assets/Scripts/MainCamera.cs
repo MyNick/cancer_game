@@ -13,6 +13,9 @@ public class MainCamera : MonoBehaviour
     private Vector3 originalPos;
 
     void FixedUpdate() {
+        if (GameObject.FindObjectsOfType<Player>().Length == 0) {
+            return;
+        }
         originalPos = target.position + Vector3.back * 10;
         if (left > 0) {
             transform.position = originalPos + Random.insideUnitSphere * shakeAmount;

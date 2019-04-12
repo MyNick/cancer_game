@@ -4,30 +4,28 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public float amountOfCancer = 0;
     public const float MAX_CANCER = 100;
+    public int AmountOfCancer { get; private set; }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        AmountOfCancer = 0;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        amountOfCancer = GameObject.FindGameObjectsWithTag("Cancer").Length;
-        amountOfCancer += GameObject.FindGameObjectsWithTag("WallCancer").Length;
+        AmountOfCancer = GameObject.FindGameObjectsWithTag("Cancer").Length;
+        AmountOfCancer += GameObject.FindGameObjectsWithTag("WallCancer").Length;
 
-        if(amountOfCancer <= 0)
+        if(AmountOfCancer == 0)
         {
-
             Debug.Log("PLAYER WIN");
         }
-        if(amountOfCancer >= MAX_CANCER)
+        else if(AmountOfCancer >= MAX_CANCER)
         {
             Debug.Log("PLAYER LOSE");
-
         }
     }
 }

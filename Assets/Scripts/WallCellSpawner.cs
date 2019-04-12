@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WallCellSpawner : MonoBehaviour
 {
-    public Transform player;
     public float minSpawnRate = 2;
     public float maxSpawnRate = 5;
 

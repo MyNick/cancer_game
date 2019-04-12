@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public const float MAX_HEALTH = 100;
     public const float HIT_DAMAGE = 20;
     public float health           = MAX_HEALTH;
+    public bool  IsDead { get { return health == 0; } }
 
     private float shootTimer;
     private bool canShoot = true;
@@ -100,11 +101,10 @@ public class Player : MonoBehaviour
     {
         if (!isHitted)
         {
-            Debug.Log("Player Hit");
             isHitted = true;
             health -= HIT_DAMAGE;
             hitTimer = 2f;
-            if (health == 0) {
+            if (health <= 0) {
                 Destroy(gameObject);
             }
         }

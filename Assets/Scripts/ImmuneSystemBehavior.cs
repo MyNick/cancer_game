@@ -28,6 +28,10 @@ public class ImmuneSystemBehavior : MonoBehaviour {
      */
     void FixedUpdate()
     {
+        if (GameObject.FindObjectsOfType<Player>().Length == 0) {
+            Movement();
+            return;
+        }
         float distance = Vector3.Distance(transform.position, target.position);
         if (distance < MAX_DISTANCE) {
             transform.GetComponent<Rigidbody2D>().velocity = speed * (target.position - transform.position).normalized;

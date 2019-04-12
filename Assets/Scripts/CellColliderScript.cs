@@ -25,7 +25,6 @@ public class CellColliderScript : MonoBehaviour
             float angle = Mathf.Atan2(normal.y, normal.x) * Mathf.Rad2Deg;
             GameObject go = Instantiate(Resources.Load<GameObject>("Prefabs/WallCell"), transform.position,
                 Quaternion.Euler(0, 0, angle));
-            go.GetComponent<WallCellSpawner>().player = GameObject.Find("Player").transform;
             Destroy(gameObject);
         }
     }
