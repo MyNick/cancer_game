@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Cancer
   - Wall
+  - ImmuneSystem
+  - WallCancer
   layers:
   - Default
   - TransparentFX
