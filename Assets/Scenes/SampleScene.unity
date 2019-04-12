@@ -1742,8 +1742,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193811039224762224, guid: 953bfa133159ec3499bc65c15c6c69f2,
         type: 3}
-      propertyPath: MAX_DISTANCE
-      value: 3
+      propertyPath: speed
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 953bfa133159ec3499bc65c15c6c69f2, type: 3}
