@@ -286,7 +286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce0a66ede28db3429b6f73983dfcd2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountOfCancer: 0
 --- !u!4 &177940433
 Transform:
   m_ObjectHideFlags: 0
@@ -1479,6 +1478,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2044783182, guid: ea4cf3675191a744fbec1386568805c4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.534
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044783184, guid: ea4cf3675191a744fbec1386568805c4, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.7769819
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044783184, guid: ea4cf3675191a744fbec1386568805c4, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.374466
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044783184, guid: ea4cf3675191a744fbec1386568805c4, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044783184, guid: ea4cf3675191a744fbec1386568805c4, type: 3}
+      propertyPath: ColorModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044783184, guid: ea4cf3675191a744fbec1386568805c4, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime0
+      value: 25250
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044783184, guid: ea4cf3675191a744fbec1386568805c4, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044783184, guid: ea4cf3675191a744fbec1386568805c4, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044783184, guid: ea4cf3675191a744fbec1386568805c4, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0.54908407
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044783184, guid: ea4cf3675191a744fbec1386568805c4, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044783184, guid: ea4cf3675191a744fbec1386568805c4, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime1
+      value: 31611
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044783184, guid: ea4cf3675191a744fbec1386568805c4, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime1
+      value: 30069
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044783184, guid: ea4cf3675191a744fbec1386568805c4, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044783184, guid: ea4cf3675191a744fbec1386568805c4, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044783184, guid: ea4cf3675191a744fbec1386568805c4, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044783184, guid: ea4cf3675191a744fbec1386568805c4, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.17
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea4cf3675191a744fbec1386568805c4, type: 3}
 --- !u!1 &1744294308
@@ -1739,11 +1802,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5193811039224762224, guid: 953bfa133159ec3499bc65c15c6c69f2,
-        type: 3}
-      propertyPath: speed
-      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 953bfa133159ec3499bc65c15c6c69f2, type: 3}
