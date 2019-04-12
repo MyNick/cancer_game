@@ -29,13 +29,13 @@ public class WallCellSpawner : MonoBehaviour
     }
 
     private void Spawn() {
-        GameObject go = Instantiate(Resources.Load<GameObject>("Prefabs/Cell"), transform.position, transform.rotation);
+        GameObject go = Instantiate(Resources.Load<GameObject>("Prefabs/Cell"), transform.position + transform.right, transform.rotation);
         
     }
 
     public void Hit()
     {
-        GameObject go = Instantiate(Resources.Load<GameObject>("Prefabs/Cell"), transform.position,
+        GameObject go = Instantiate(Resources.Load<GameObject>("Prefabs/Cell"), transform.position + transform.right,
                 Quaternion.Euler(0, 0, 0));
         go.GetComponent<CancerMovement>().Hit();
         Destroy(gameObject);
