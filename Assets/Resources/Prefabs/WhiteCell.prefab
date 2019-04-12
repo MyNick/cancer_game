@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 491711023911304182}
   - component: {fileID: 5413022645701221158}
   - component: {fileID: 6764351674272494731}
+  - component: {fileID: 8658366294593982268}
+  - component: {fileID: 8687243279137054366}
+  - component: {fileID: 5193811039224762224}
   m_Layer: 0
   m_Name: WhiteCell
   m_TagString: Untagged
@@ -81,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5413022645701221158
+
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +100,7 @@ CircleCollider2D:
   m_Offset: {x: -0.07, y: -0.03}
   serializedVersion: 2
   m_Radius: 0.75
---- !u!114 &6764351674272494731
+--- !u!114 &5193811039224762224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,6 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09577de023f505d4c8e50c76c4198e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.15
+  speed: 0.5
   target: {fileID: 0}
-  MAX_DISTANCE: 3
+  MAX_DISTANCE: 1

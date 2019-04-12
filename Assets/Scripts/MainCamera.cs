@@ -16,7 +16,7 @@ public class MainCamera : MonoBehaviour
         originalPos = target.position + Vector3.back * 10;
         if (left > 0) {
             transform.position = originalPos + Random.insideUnitSphere * shakeAmount;
-            Debug.Log("moving");
+
             left -= Time.fixedDeltaTime / Time.timeScale;
             if (left <= 0) {
                 left = 0;
