@@ -23,6 +23,12 @@ public class Laser : MonoBehaviour
             collision.GetComponent<CancerMovement>().Hit();
 
         }
+
+        if (collision.CompareTag("WallCancer"))
+        {
+            collision.GetComponent<WallCellSpawner>().Hit();
+
+        }
         if (!collision.CompareTag("Player"))
         {
             Destroy(gameObject);
