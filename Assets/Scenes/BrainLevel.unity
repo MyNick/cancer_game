@@ -2243,4 +2243,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1947458970}
-  shakeAmount: 1
+  shakeAmount: 0.2
