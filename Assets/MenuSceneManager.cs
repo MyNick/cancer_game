@@ -14,6 +14,19 @@ public class MenuSceneManager : MonoBehaviour
     
     public void loadLevel()
     {
+        SceneManager.LoadScene(2);
+    }
+
+    public void loadTutorial() {
         SceneManager.LoadScene(1);
+    }
+
+
+    public void loadMenu() {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Exit() {
+        Application.Quit();
     }
 }
