@@ -6,7 +6,7 @@ public class ImmuneSystemBehavior : MonoBehaviour {
 
     public float speed;
     public Transform target;
-    public float MAX_DISTANCE = 2.0f;
+    public float MAX_DISTANCE;
 
 
     private float minChangeDirectionTime = 0.5f;
@@ -28,9 +28,8 @@ public class ImmuneSystemBehavior : MonoBehaviour {
      */
     void FixedUpdate()
     {
-        if (Vector3.Distance(transform.position, target.position) < 2.0f) {
+        if (Vector3.Distance(transform.position, target.position) < MAX_DISTANCE) {
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
-            Debug.Log(Vector3.Distance(transform.position, target.position));
         } else {
             Movement();
         }
