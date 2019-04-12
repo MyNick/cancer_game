@@ -495,7 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 713783182}
-  shakeAmount: 0.2
+  shakeAmount: 0.05
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
