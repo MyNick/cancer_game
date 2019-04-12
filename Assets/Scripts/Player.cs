@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     public float movementSpeed = 3f;
     public float rotationSpeed = 4f;
 
+    public float health = 100;
+
     private float shootTimer;
     private bool canShoot = true;
 
