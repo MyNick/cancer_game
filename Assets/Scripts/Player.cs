@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     private float shootTimer;
     private bool canShoot = true;
 
+    private bool isHitted = false;
+    private float hitTimer;
+
     void Start() {
         ResetTimer();
     }
@@ -25,6 +28,11 @@ public class Player : MonoBehaviour
             
             canShoot = true;
         }
+        hitTimer -= Time.fixedDeltaTime;
+        if (hitTimer <= 0 && isHitted)
+        {
+            isHitted = false;
+        }
     }
 
     private void Update()
@@ -34,6 +42,11 @@ public class Player : MonoBehaviour
             Object laser = Instantiate(Resources.Load<GameObject>("Prefabs/Laser"), transform.position, transform.rotation);
             ResetTimer();
             canShoot = false;
+        }
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -84,5 +97,16 @@ public class Player : MonoBehaviour
     private void ResetTimer()
     {
         shootTimer = 0.25f;
+    }
+
+    public void Hit()
+    {
+        if (!isHitted)
+        {
+            Debug.Log("Player Hit");
+            isHitted = true;
+            health -= 25;
+            hitTimer = 2f;
+        }
     }
 }
