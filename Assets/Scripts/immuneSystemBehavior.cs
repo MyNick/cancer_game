@@ -30,7 +30,6 @@ public class ImmuneSystemBehavior : MonoBehaviour {
     {
         if (Vector3.Distance(transform.position, target.position) < 2.0f) {
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
-            Debug.Log(Vector3.Distance(transform.position, target.position));
         } else {
             Movement();
         }
