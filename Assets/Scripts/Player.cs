@@ -7,7 +7,8 @@ public class Player : MonoBehaviour
     public float movementSpeed = 3f;
     public float rotationSpeed = 4f;
 
-    public float health = 100;
+    public const float MAX_HEALTH = 100;
+    public float health           = MAX_HEALTH;
 
     private float shootTimer;
     private bool canShoot = true;
